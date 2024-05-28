@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <canvas
+        id="conway"
+        width="1280"
+        height="720"
+        class="mx-auto border-4 border-blue-600 m-2 rounded"></canvas>
+      <div id="root"></div>
+      <div class="flex justify-around">
+        <div>
+          <button
+            id="pause"
+            class="rounded bg-blue-400 text-white font-bold text-xl p-2 px-4 uppercase">
+            Start
+          </button>
+          <button
+            id="reset"
+            class="rounded bg-red-400 text-white font-bold text-xl p-2 px-4 uppercase">
+            Reset
+          </button>
+        </div>
+        <div class="inline group relative">
+          <div
+            class="hidden group-hover:inline absolute top-6 border-black border-2 p-2">
+            Creates a grid where cells have a 1 in 5 chance of being alive.
+          </div>
+          <div class="inline">Use random start:</div>
+          <input type="checkbox" id="randomStart" />
+        </div>
+        <div class="inline group relative w-36">
+          <div
+            class="hidden group-hover:inline absolute top-6 border-black border-2 p-2">
+            Cells that are more then 20 frames old die.
+          </div>
+          <div class="inline">Old Age:</div>
+          <input type="checkbox" id="oldAge" />
+        </div>
+        <div class="inline group relative">
+          <div
+            class="hidden group-hover:inline absolute top-6 border-black border-2 p-2">
+            Each frame, dead cells have a 1 in 1000 chance of becoming alive.
+          </div>
+          <div class="inline">Spontaneous Life:</div>
+          <input type="checkbox" id="spontaneousLife" />
+        </div>
+        <div>
+          <div id="fpsLabel">FPS: 2</div>
+          <input type="range" min="1" max="50" value="2" id="fpsSlider" />
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
